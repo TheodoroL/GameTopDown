@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dqvfgi3bj4tjb" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://c2md3rsymifx5" path="res://trees/pine_tree.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bndc8kxevch71" path="res://mob.tscn" id="3_feb5d"]
 
 [node name="Game" type="Node2D" unique_id=1104970341]
 y_sort_enabled = true
@@ -18,7 +19,7 @@ position = Vector2(439, 300)
 position = Vector2(136, 79)
 
 [node name="PineTree2" parent="." unique_id=878116746 instance=ExtResource("2_e2o6t")]
-position = Vector2(787, 148)
+position = Vector2(62, 622)
 
 [node name="PineTree3" parent="." unique_id=1912141563 instance=ExtResource("2_e2o6t")]
 position = Vector2(137, 390)
@@ -31,3 +32,15 @@ position = Vector2(916, 411)
 
 [node name="PineTree6" parent="." unique_id=410968063 instance=ExtResource("2_e2o6t")]
 position = Vector2(1069, 550)
+
+[node name="Mob" parent="." unique_id=57528452 instance=ExtResource("3_feb5d")]
+position = Vector2(508, 166)
+
+[node name="Mob2" parent="." unique_id=295156305 instance=ExtResource("3_feb5d")]
+position = Vector2(1070, 216)
+
+[node name="Mob3" parent="." unique_id=764087297 instance=ExtResource("3_feb5d")]
+position = Vector2(69, 249)
+
+[node name="Mob4" parent="." unique_id=534786188 instance=ExtResource("3_feb5d")]
+position = Vector2(1202, 669)
