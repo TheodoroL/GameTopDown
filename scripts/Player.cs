@@ -13,6 +13,8 @@ public partial class Player : CharacterBody2D
         
         Velocity = direction * _speed;
         MoveAndSlide();
+
+        var happyBoo = GetNode("HappyBoo");
         
         if (Velocity.Length() > 0)
             /*
@@ -20,8 +22,8 @@ public partial class Player : CharacterBody2D
              * que estão em gdscript e executando em C#
              */
         
-            GetNode("HappyBoo").Call("play_walk_animation");
+            happyBoo.Call("play_walk_animation");
         else
-            GetNode("HappyBoo").Call("play_idle_animation");
+            happyBoo.Call("play_idle_animation");
     }
 }
