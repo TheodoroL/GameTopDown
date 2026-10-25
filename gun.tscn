@@ -1,16 +1,26 @@
 [gd_scene format=3 uid="uid://fpfi5pg87jad"]
 
+[ext_resource type="Script" uid="uid://cpqbo2buhfjnj" path="res://scripts/Gun.cs" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://dtmdipt2xnpkh" path="res://pistol/pistol.png" id="1_vk1bi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gyvws"]
-radius = 162.30835
+radius = 201.22873
 
 [node name="Gun" type="Area2D" unique_id=1085670054]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_dk5gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1627273882]
+rotation = 1.007818
 shape = SubResource("CircleShape2D_gyvws")
 
-[node name="Pistol" type="Sprite2D" parent="." unique_id=777723329]
-position = Vector2(0.9999995, -2.3841858e-07)
-scale = Vector2(0.23000002, 0.23000002)
+[node name="WheponPivot" type="Marker2D" parent="." unique_id=600528627]
+
+[node name="Pistol" type="Sprite2D" parent="WheponPivot" unique_id=777723329]
+position = Vector2(69.999985, -1.9999995)
+scale = Vector2(0.80750006, 0.80750006)
 texture = ExtResource("1_vk1bi")
+
+[node name="Marker2D" type="Marker2D" parent="WheponPivot/Pistol" unique_id=864566565]
+position = Vector2(26.086973, -8.695652)

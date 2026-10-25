@@ -37,13 +37,13 @@ position = Vector2(916, 411)
 position = Vector2(1069, 550)
 
 [node name="Mob" parent="." unique_id=57528452 instance=ExtResource("3_feb5d")]
-position = Vector2(508, 166)
+position = Vector2(855, 145)
 
-[node name="Mob2" parent="." unique_id=295156305 instance=ExtResource("3_feb5d")]
-position = Vector2(1070, 216)
+[node name="Mob2" parent="." unique_id=965692831 instance=ExtResource("3_feb5d")]
+position = Vector2(1166, 325)
 
-[node name="Mob3" parent="." unique_id=764087297 instance=ExtResource("3_feb5d")]
-position = Vector2(69, 249)
+[node name="Mob3" parent="." unique_id=99793761 instance=ExtResource("3_feb5d")]
+position = Vector2(216, 542)
 
-[node name="Mob4" parent="." unique_id=534786188 instance=ExtResource("3_feb5d")]
-position = Vector2(1202, 669)
+[node name="Mob4" parent="." unique_id=1547653335 instance=ExtResource("3_feb5d")]
+position = Vector2(795, 598)
