@@ -22,5 +22,11 @@ position = Vector2(69.999985, -1.9999995)
 scale = Vector2(0.80750006, 0.80750006)
 texture = ExtResource("1_vk1bi")
 
-[node name="Marker2D" type="Marker2D" parent="WheponPivot/Pistol" unique_id=864566565]
+[node name="ShootingPointer" type="Marker2D" parent="WheponPivot/Pistol" unique_id=864566565]
+unique_name_in_owner = true
 position = Vector2(26.086973, -8.695652)
+
+[node name="Timer" type="Timer" parent="." unique_id=1917999711]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
