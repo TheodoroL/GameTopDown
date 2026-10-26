@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://domwuw88ufimy"]
 
 [ext_resource type="PackedScene" uid="uid://dqvfgi3bj4tjb" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://dx3bxg3871mh8" path="res://scripts/Game.cs" id="1_game"]
 [ext_resource type="PackedScene" uid="uid://c2md3rsymifx5" path="res://trees/pine_tree.tscn" id="2_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://bndc8kxevch71" path="res://mob.tscn" id="3_feb5d"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -8, -50, 0, 0, 0, 0, 1285, -72, 0, 0, 0, 0, 1301, 754, 0, 0, 0, 0, -5, 735, 0, 0, 0, 0, -2, -56)
+}
+point_count = 5
 
 [node name="Game" type="Node2D" unique_id=1104970341]
 y_sort_enabled = true
+script = ExtResource("1_game")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=209849956]
 layer = -30
@@ -17,6 +24,15 @@ size_flags_horizontal = 4
 
 [node name="Player" parent="." unique_id=179795483 instance=ExtResource("1_80nbo")]
 position = Vector2(439, 300)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=938188380]
+position = Vector2(-439, -300)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=1264634220]
+unique_name_in_owner = true
+position = Vector2(-8, -50)
+rotation = -0.017013054
 
 [node name="PineTree" parent="." unique_id=772970360 instance=ExtResource("2_e2o6t")]
 position = Vector2(136, 79)
@@ -36,14 +52,8 @@ position = Vector2(916, 411)
 [node name="PineTree6" parent="." unique_id=410968063 instance=ExtResource("2_e2o6t")]
 position = Vector2(1069, 550)
 
-[node name="Mob" parent="." unique_id=57528452 instance=ExtResource("3_feb5d")]
-position = Vector2(855, 145)
+[node name="Timer" type="Timer" parent="." unique_id=386523569]
+wait_time = 0.3
+autostart = true
 
-[node name="Mob2" parent="." unique_id=965692831 instance=ExtResource("3_feb5d")]
-position = Vector2(1166, 325)
-
-[node name="Mob3" parent="." unique_id=99793761 instance=ExtResource("3_feb5d")]
-position = Vector2(216, 542)
-
-[node name="Mob4" parent="." unique_id=1547653335 instance=ExtResource("3_feb5d")]
-position = Vector2(795, 598)
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
