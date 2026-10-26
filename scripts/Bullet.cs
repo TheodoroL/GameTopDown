@@ -21,9 +21,9 @@ public partial class Bullet : Area2D
 	public void OnBodyEntered(Node2D body)
 	{
 		QueueFree();
-		if (body.HasMethod("take_damage"))
+		if (body.HasMethod("TakeDamage"))
 		{
-			body.Call("take_damage");
+			body.Call("TakeDamage");
 		}
 	}
 }

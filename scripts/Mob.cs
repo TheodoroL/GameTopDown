@@ -5,9 +5,12 @@ public partial class Mob : CharacterBody2D
 {
 	private Player _player;
 	private int _speed = 300;
+	private int _health = 3;
+	
 	public override void _Ready()
 	{
 		_player = GetNode<Player>("../Player");
+		GetNode("%Slime").Call("play_walk");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -17,5 +20,14 @@ public partial class Mob : CharacterBody2D
 		Velocity = direction * _speed;
 		MoveAndSlide();
 
+	}
+
+	public void TakeDamage()
+	{
+		_health--;
+		GetNode("%Slime").Call("play_hurt");
+		
+		if (_health <= 0)
+			QueueFree();
 	}
 }
