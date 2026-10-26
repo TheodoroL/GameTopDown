@@ -7,7 +7,7 @@ public partial class Player : CharacterBody2D
     
     private int _speed = 600;
     private double  _health = 100;
-    private int _damage = 5;
+    private int _damage = 15;
 
     private ProgressBar _progressBar;
 
@@ -46,7 +46,7 @@ public partial class Player : CharacterBody2D
             _progressBar.Value = _health;
            
             if (_health <= 0)
-                EmitSignal(nameof(HealthDepletedEventHandler));
+                EmitSignal(SignalName.HealthDepleted);
         }
         
     }

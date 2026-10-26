@@ -5,10 +5,12 @@ public partial class Game : Node2D
 {
     private PackedScene _mobScene = GD.Load<PackedScene>("res://mob.tscn");
     private PathFollow2D _pathFollow2D;
-
+    private CanvasLayer _gamerOver;
+    
     public override void _Ready()
     {
         _pathFollow2D = GetNode<PathFollow2D>("%PathFollow2D");
+        _gamerOver = GetNode<CanvasLayer>("%GamerOver");
     }
 
     private void _spawnMob()
@@ -26,5 +28,20 @@ public partial class Game : Node2D
     {
         _spawnMob();
         GD.Print("Spawned mob");
+    }
+
+    public void OnPlayerHealthDepleted()
+    {
+        // 1. Torna visível primeiro
+        _gamerOver.Visible = true;
+    
+        // 2. Pausa o jogo depois
+        GetTree().Paused = true;
+    }
+    public void OnButtonPressed()
+    {
+        GetTree().Paused = false;
+        GetTree().ReloadCurrentScene();
+        GD.Print("Button pressed");
     }
 }
